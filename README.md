@@ -24,6 +24,53 @@ Condições empregadas
 
 - Analistas com role n1 não podem rejeitar ou excluir um pedido de cartão e nem visualizar o salário base do Cliente
 
+### Como rodar o Servidor
+
+```sh
+yarn
+yarn start
+
+ou
+
+npm install
+npm run start
+```
+
+output:
+
+```
+  Resources:
+  http://localhost:3000/users
+  http://localhost:3000/analysts
+  http://localhost:3000/cards
+  http://localhost:3000/features
+```
+
+Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
+
+Chamadas:
+
+- Users
+
+  - GET http://localhost:3000/users
+  - GET http://localhost:3000/users/:id
+
+- Analysts
+
+  - GET http://localhost:3000/analysts
+
+- Cards
+
+  - GET http://localhost:3000/cards
+  - POST http://localhost:3000/cards
+  - PUT http://localhost:3000/cards/:id
+  - DELETE http://localhost:3000/cards/:id
+
+- Features
+
+  - GET http://localhost:3000/features
+
 ### **Estrutura de dados**
 
 - **Users**
@@ -86,53 +133,6 @@ Condições empregadas
   "status": 200
 }
 ```
-
-Como rodar o Servidor
-
-```sh
-yarn
-yarn start
-
-ou
-
-npm install
-npm run start
-```
-
-output:
-
-```
-  Resources:
-  http://localhost:3000/users
-  http://localhost:3000/analysts
-  http://localhost:3000/cards
-  http://localhost:3000/features
-```
-
-Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
-Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
-
-Chamadas:
-
-- Users
-
-  - GET http://localhost:3000/users
-  - GET http://localhost:3000/users/:id
-
-- Analysts
-
-  - GET http://localhost:3000/analysts
-
-- Cards
-
-  - GET http://localhost:3000/cards
-  - POST http://localhost:3000/cards
-  - PUT http://localhost:3000/cards/:id
-  - DELETE http://localhost:3000/cards/:id
-
-- Features
-
-  - GET http://localhost:3000/features
 
 Observações
 
