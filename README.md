@@ -1,4 +1,7 @@
-**Desafio Admin-web**
+<p align="center">
+  <strong>Desafio Admin-web</strong><br>
+  <br>
+</p>
 
 Que tal ser desafiado pela Stone?
 
