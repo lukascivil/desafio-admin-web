@@ -112,19 +112,22 @@ Sua aplicacao deve contemplar todos os resources listados acima e realizar as se
 Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade.
 
 - Users
-  GET http://localhost:3000/users
-  GET http://localhost:3000/users/:id
+
+  - GET http://localhost:3000/users
+  - GET http://localhost:3000/users/:id
 
 - Analysts
-  GET http://localhost:3000/analysts
+
+  - GET http://localhost:3000/analysts
 
 - Cards
-  GET http://localhost:3000/cards
-  PUT http://localhost:3000/cards/:id
-  DELETE http://localhost:3000/cards/:id
+
+  - GET http://localhost:3000/cards
+  - PUT http://localhost:3000/cards/:id
+  - DELETE http://localhost:3000/cards/:id
 
 - Features
-  GET http://localhost:3000/features
+  - GET http://localhost:3000/features
 
 Observações
 
