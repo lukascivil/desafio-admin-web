@@ -102,14 +102,17 @@ npm run start
 output:
 
 ```
+  Resources:
   http://localhost:3000/users
   http://localhost:3000/analysts
   http://localhost:3000/cards
   http://localhost:3000/features
 ```
 
-Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes - listadas logo abaixo - chamadas para atender as nesessidades do analista.
-Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade.
+Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
+
+Chamadas:
 
 - Users
 
