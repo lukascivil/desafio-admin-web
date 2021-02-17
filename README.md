@@ -87,6 +87,45 @@ Condições empregadas
 }
 ```
 
+Como rodar o Servidor
+
+```sh
+yarn
+yarn start
+
+ou
+
+npm install
+npm run start
+```
+
+output:
+
+```
+  http://localhost:3000/users
+  http://localhost:3000/analysts
+  http://localhost:3000/cards
+  http://localhost:3000/features
+```
+
+Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade.
+
+- Users
+  GET http://localhost:3000/users
+  GET http://localhost:3000/users/:id
+
+- Analysts
+  GET http://localhost:3000/analysts
+
+- Cards
+  GET http://localhost:3000/cards
+  PUT http://localhost:3000/cards/:id
+  DELETE http://localhost:3000/cards/:id
+
+- Features
+  GET http://localhost:3000/features
+
 Observações
 
 - Cada cartão tem seu próprio estado e sempre parte do estado &quot;Solicitado&quot;. Um cartão pode ser solicitado pelo usuário ou pelo próprio analista. A responsabilidade do analista ao analisar um cartão é, &quot;aprovar&quot; ou &quot;rejeitar&quot;. E a responsabilidade da API será a de processar ou cancelar, parte que não precisaremos nos preocupar.
