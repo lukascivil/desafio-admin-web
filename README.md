@@ -22,7 +22,7 @@ O Analista deve ser capaz de:
 
 Condições empregadas
 
-- Analistas com role n1 não podem rejeitar um pedido de cartão e nem visualizar o salário base do Cliente
+- Analistas com role n1 não podem rejeitar ou excluir um pedido de cartão e nem visualizar o salário base do Cliente
 
 ### **Estrutura de dados**
 
@@ -108,7 +108,7 @@ output:
   http://localhost:3000/features
 ```
 
-Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes - listadas logo abaixo - chamadas para atender as nesessidades do analista.
 Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade.
 
 - Users
@@ -123,10 +123,12 @@ Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vonta
 - Cards
 
   - GET http://localhost:3000/cards
+  - POST http://localhost:3000/cards
   - PUT http://localhost:3000/cards/:id
   - DELETE http://localhost:3000/cards/:id
 
 - Features
+
   - GET http://localhost:3000/features
 
 Observações
