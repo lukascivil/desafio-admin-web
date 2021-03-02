@@ -154,6 +154,9 @@ Observações
 - Uma feature habilitada - que é retornada dentro de usuário - diz ao operador quais recursos aquele usuário tem disponível.
 - A API também disponibiliza uma endpoint para um &quot;de para&quot; entre as features habilitadas para um usuário.
 
+### **Desenvolvimento**
+Realize um Fork deste projeto para começar o seu desafio. O projeto do desafio conta com react-scripts e Typescript para lhe ajudar durante o desenvolvimento.
+
 ### **Layout**
 
 Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dicas:
@@ -203,3 +206,6 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - [Airbnb Javascript](https://github.com/airbnb/javascript)
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [React-Admin](https://marmelab.com/react-admin/)
+
+
+Tenha um bom desafio.
