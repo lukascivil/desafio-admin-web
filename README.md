@@ -7,15 +7,16 @@ Que tal ser desafiado pela Stone?
 
 O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento. Voce terá o papel de ajudar a alavancar os negócios dessa empresa. Um nome bem legal para ela ficará a seu critéio, mas ao longo do texto a chamaremos de **Rocha Incrível**.
 
-A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise do usuário para a liberação do cartão de crédito, mas o sistema ainda não existe. Os Análistas que serao nossos futuro clientes usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das acoes dos proprios analistas.
+A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise dos usuários para a liberação do cartão de crédito, mas o sistema que automatizará todo o processo ainda não existe. Os nossos futuros clientes, os análistas, usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das ações dos próprios analistas.
 
-Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar** ou **rejeitar** ou **excluir** os pedidos de cartão.
+Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar**, **rejeitar** ou **excluir** os pedidos de cartão.
 
 Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
 
 Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
 
 O Analista deve ser capaz de:
+> Recursos do contexto **users**, **cards**, **audits**
 
 1. **Visualizar** usuários da base
 2. **Visualizar** cartoes disponíveis
@@ -23,6 +24,13 @@ O Analista deve ser capaz de:
 4. **Aprovar**, **rejeitar**, **excluir** um pedido de cartão
 5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
+
+O Analista deve ser capaz de **(Level Up)**
+> Recursos do contexto **users**, **cards**, **audits**
+1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
+2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
+3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
+4. **Sair** da aplicação
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
@@ -206,6 +214,8 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - [Airbnb Javascript](https://github.com/airbnb/javascript)
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [React-Admin](https://marmelab.com/react-admin/)
+- [REST](https://pt.wikipedia.org/wiki/REST)
+
 
 
 Tenha um bom desafio.
