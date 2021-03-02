@@ -100,6 +100,11 @@ Chamadas:
 
   - GET http://localhost:3000/features
 
+- Audits
+  -  GET http://localhost:3001/audits
+  -  POST http://localhost:3001/audits
+
+
 ### **Estrutura de dados**
 
 - **Users**
