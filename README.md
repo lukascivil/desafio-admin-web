@@ -5,48 +5,57 @@
 
 Que tal ser desafiado pela Stone?
 
-O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento.
+O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento. Voce terá o papel de ajudar a alavancar os negócios dessa empresa. Um nome bem legal para ela ficará a seu critéio, mas ao longo do texto a chamaremos de **Rocha Incrível**.
 
-Essa empresa terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de pagamento para eles. A empresa conta com times que fazem análise do usuário para a liberação do cartão de pagamento, mas o sistema ainda não existe, os mesmos usam uma planilha para controle interno. Essa planilha é alimentada por APIS existentes dentro da empresa.
+A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise do usuário para a liberação do cartão de crédito, mas o sistema ainda não existe. Os Análistas que serao nossos futuro clientes usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das acoes dos proprios analistas.
 
-Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O mesmo deverá ser capaz de aprovar ou rejeitar os pedidos de cartão.
+Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar** ou **rejeitar** ou **excluir** os pedidos de cartão.
 
-Os analistas trabalham em 2 times diferentes, para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
+Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
 
 Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
 
 O Analista deve ser capaz de:
 
-- Aprovar ou rejeitar um pedido de cartão
-- Atualizar o nome do usuário de um pedido de cartão
-- Criar novo pedido de Cartão
-- Visualizar Usuários da base
-- Visualizar Cartões da base
+1. **Visualizar** usuários da base
+2. **Visualizar** cartoes disponíveis
+3. **Visualizar** Auditoria
+4. **Aprovar**, **rejeitar**, **excluir** um pedido de cartão
+5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
+6. **Solicitar** um novo cartao para qualquer usuário presente na base
+
+Observacoes
+- Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
+- Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser salvo. O sua aplicacao deverá fornecer uma área para auditoria. Usar o modelo existente no desafio.
 
 Condições empregadas
 
 - Analistas com role n1 não podem rejeitar ou excluir um pedido de cartão e nem visualizar o salário base do Cliente
 
-### Como rodar o Servidor
+### Como rodar o APP Cliente-Servidor
 
 ```sh
-yarn
-yarn start
+1- yarn build
+2- yarn dev
 
 ou
 
-npm install
+npm run build
 npm run start
 ```
 
 output:
 
 ```
+// CRA
+  http://localhost:3000/
+
+// Api
   Resources:
-  http://localhost:3000/users
-  http://localhost:3000/analysts
-  http://localhost:3000/cards
-  http://localhost:3000/features
+  http://localhost:3001/users
+  http://localhost:3001/analysts
+  http://localhost:3001/cards
+  http://localhost:3001/features
 ```
 
 Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
@@ -139,10 +148,8 @@ Chamadas:
 
 Observações
 
-- Cada cartão tem seu próprio estado e sempre parte do estado &quot;Solicitado&quot;. Um cartão pode ser solicitado pelo usuário ou pelo próprio analista. A responsabilidade do analista ao analisar um cartão é, &quot;aprovar&quot; ou &quot;rejeitar&quot;. E a responsabilidade da API será a de processar ou cancelar, parte que não precisaremos nos preocupar.
+- Cada cartão tem seu próprio estado e sempre parte do estado "requested" (solicitado).
 
-  - Requested -\&gt; Approved -\&gt; Processed
-  - Requested -\&gt; Rejected -\&gt; Canceled
 
 - Uma feature habilitada - que é retornada dentro de usuário - diz ao operador quais recursos aquele usuário tem disponível.
 - A API também disponibiliza uma endpoint para um &quot;de para&quot; entre as features habilitadas para um usuário.
@@ -151,7 +158,7 @@ Observações
 
 Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dicas:
 
-- O layout precisa "escalar", ou seja, qual a visão de futuro para o mesmo caso precise adicionar mais informações? Será necessário um re-layout ou o mesmo comportará?
+- O layout precisa "escalar", ou seja, qual a visão de futuro para o mesmo caso precise adicionar mais informações?
 
 ### **Entrega**
 
@@ -178,8 +185,10 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 
 ### **Deploy**
 
-- Publique sua aplicação ([now](https://zeit.co/)/[heroku](https://www.heroku.com/)/[netlify](https://www.netlify.com/)/outros)
 - Publique seu código no seu perfil no GitHub
+- Publique sua aplicação [heroku](https://www.heroku.com/)
+  - Habilite o [Heroku Github Action](https://github.com/marketplace/actions/deploy-to-heroku)
+  - basta Editar o template em "workflows/node.js.yml"
 
 ### **Outras informações**
 
@@ -192,3 +201,4 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - [Boas Práticas de commit](https://github.com/stone-payments/stoneco-best-practices/blob/master/gitStyleGuide/README_pt.md)
 - [Airbnb Javascript](https://github.com/airbnb/javascript)
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [React-Admin](https://marmelab.com/react-admin/)
