@@ -177,6 +177,7 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 
 - O layout precisa "escalar", ou seja, qual a visão de futuro para o App caso precise adicionar mais informações?
 - Não se prenda a algum layout específico que tenha encontrado pela internet, deixe sua criatividade tomar conta.
+- O tratamento dos campos é por sua conta, por exemplo CPF: "58395591055" -> "583.955.910-55" 
 
 ### **Entrega**
 
