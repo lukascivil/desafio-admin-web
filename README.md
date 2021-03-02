@@ -28,7 +28,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
 
-- O Analista deve ser capaz de: **Recursos adicionais desejaveis mas nao requeridos (Level Up)**
+- O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
 > Recursos do contexto **features**, **analysts**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
