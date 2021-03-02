@@ -64,7 +64,12 @@ const getAnalysts = () => {
       id: generateRandomNumber(1, 10000),
       user_id: index,
     }))
-    .slice(-3);
+    .slice(-3)
+    .map((value, index) => ({
+      ...value,
+      email: `admin${index}@gmail.com`,
+      password: `admin${index}`,
+    }));
 
   analysts[0] = { ...analysts[0], roles: ["n1", "n2"] } as any;
   analysts[1] = { ...analysts[1], roles: ["n1"] } as any;
@@ -138,6 +143,7 @@ const getCards = () => {
       metadatas: {
         name: value,
         digits: generateRandomNumber(1000, 9999),
+        limit: generateRandomNumber(1000, 9999),
       },
     }))
     .slice(1, references.users.length - 5);
