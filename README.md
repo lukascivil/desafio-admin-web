@@ -32,26 +32,30 @@ Condições empregadas
 
 - Analistas com role n1 não podem rejeitar ou excluir um pedido de cartão e nem visualizar o salário base do Cliente
 
-### Como rodar o Servidor
+### Como rodar o APP Cliente-Servidor
 
 ```sh
-yarn
-yarn start
+1- yarn build
+2- yarn dev
 
 ou
 
-npm install
+npm run build
 npm run start
 ```
 
 output:
 
 ```
+// CRA
+  http://localhost:3000/
+
+// Api
   Resources:
-  http://localhost:3000/users
-  http://localhost:3000/analysts
-  http://localhost:3000/cards
-  http://localhost:3000/features
+  http://localhost:3001/users
+  http://localhost:3001/analysts
+  http://localhost:3001/cards
+  http://localhost:3001/features
 ```
 
 Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
