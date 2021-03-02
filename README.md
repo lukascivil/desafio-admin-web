@@ -221,6 +221,7 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [React-Admin](https://marmelab.com/react-admin/)
 - [REST](https://pt.wikipedia.org/wiki/REST)
+- [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
 
 
