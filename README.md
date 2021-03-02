@@ -139,7 +139,7 @@ Chamadas:
   "user_id": "Id do usuário",
   "metadatas": {
     "name": "Nome impresso no cartão usuário",
-    "digits": "Dígitos do cartão"
+    "digits": "Dígitos do cartão",
     "limit": "Limite do cartao de crédito em reais"
   }
 }
