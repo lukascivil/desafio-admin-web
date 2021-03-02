@@ -103,6 +103,7 @@ Chamadas:
 ### **Estrutura de dados**
 
 - **Users**
+> Usuários da base
 
 ```json
 {
@@ -124,6 +125,7 @@ Chamadas:
 ```
 
 - **Analysts**
+> Analistas ou operadores que utilizarão o web-app
 
 ```json
 {
@@ -136,10 +138,11 @@ Chamadas:
 ```
 
 - **Cards**
+> Cartões solicitados para alguns usuários da base
 
 ```json
 {
-  "createdAt": "Data de criação do cartao",
+  "createdAt": "Data de criação do cartão",
   "updatedAt": "Data de atualização do cartão",
   "status": "Status do cartão",
   "id": "Id do cartão",
@@ -153,6 +156,7 @@ Chamadas:
 ```
 
 - **Features**
+> Lista dos recursos que a empresa pode oferecer aos seus clientes
 
 ```json
 {
