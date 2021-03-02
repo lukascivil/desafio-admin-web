@@ -58,7 +58,7 @@ const randomDate = (start: Date, end: Date) => {
   );
 };
 
-export const getAnalysts = () => {
+const getAnalysts = () => {
   const analysts = references.users
     .map((_, index) => ({
       id: generateRandomNumber(1, 10000),
@@ -79,16 +79,17 @@ const generateRandomNumber = (min: number, max: number) => {
   return value;
 };
 
-const onlyUnique = (value, index, self) => {
+const onlyUnique = (value: any, index: any, self: any) => {
   return self.indexOf(value) === index;
 };
 
-export const getUsers = () => {
-  return references.users.map((value: string, index: number) => ({
+const getUsers = () => {
+  return references.users.map((value, index) => ({
     name: value,
-    email: Boolean(value)
-      ? value.split(" ").join("_").toLocaleLowerCase().concat("@gmail.com")
-      : "",
+    email:
+      value !== undefined
+        ? value.split(" ").join("_").toLocaleLowerCase().concat("@gmail.com")
+        : "",
     BirthDate: randomDate(new Date(2012, 0, 1), new Date()),
     createdAt: randomDate(new Date(2012, 0, 1), new Date()),
     updatedAt: Boolean(generateRandomNumber(0, 1))
@@ -126,9 +127,9 @@ export const getUsers = () => {
   }));
 };
 
-export const getCards = () => {
+const getCards = () => {
   return references.users
-    .map((value: string, index: number) => ({
+    .map((value, index) => ({
       createdAt: randomDate(new Date(2012, 0, 1), new Date()),
       updatedAt: null,
       status: "requested", // Requested -> Approved -> Processed | Requested -> Rejected -> Canceled
@@ -142,7 +143,7 @@ export const getCards = () => {
     .slice(1, references.users.length - 5);
 };
 
-export const getFeatures = () => {
+const getFeatures = () => {
   const result = references.features.map((value, index) => ({
     id: index,
     name: value,
@@ -151,14 +152,48 @@ export const getFeatures = () => {
   return { result, status: 200 };
 };
 
-const db = {
+const getAudits = () => {
+  const result = [
+    {
+      id: 0,
+      createdAt: "2021-02-28T23:00:02.790Z",
+      type: "card-status-change",
+      before: {
+        createdAt: "2012-12-14T11:23:05.635Z",
+        id: 1001,
+        metadatas: { name: "Tiago Rodrigues", digits: 4405 },
+        digits: 4405,
+        name: "Tiago Rodrigues",
+        status: "requested",
+        updatedAt: null,
+        user_id: 1,
+      },
+      after: {
+        createdAt: "2012-12-14T11:23:05.635Z",
+        id: 1001,
+        metadatas: { name: "Tiago Rodrigues", digits: 4405 },
+        digits: 4405,
+        name: "Tiago Rodrigues",
+        status: "rejected",
+        updatedAt: null,
+        user_id: 1,
+      },
+      requestedBy: 11112,
+    },
+  ];
+
+  return result;
+};
+
+export const db = {
   users: getUsers(),
   analysts: getAnalysts(),
   cards: getCards(),
   features: getFeatures(),
+  audits: getAudits(),
 };
 
-fs.writeFile("./src/db.json", JSON.stringify(db), function (err) {
+fs.writeFile(`${__dirname}/db.json`, JSON.stringify(db), (err: any) => {
   if (err) {
     return console.log(err);
   }
