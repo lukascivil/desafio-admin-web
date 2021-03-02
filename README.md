@@ -30,8 +30,9 @@ O Analista deve ser capaz de **(Level Up)**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
 3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
-4. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
-5. **Sair** da aplicação
+4. Analista com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
+5. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
+6. **Sair** da aplicação
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
@@ -106,8 +107,8 @@ Chamadas:
   "enabledFeatures": "Lista de recursos habilitados",
   "document": "Documento do usuário",
   "metadatas": {
-    "validDocument": "O documento é válido?",
-    "verified": "O usuário foi validado pela API?"
+    "validDocument": "O documento é válido? A IA é quem define este campo.",
+    "verified": "O usuário foi verificado pela IA da empresa?"
   },
   "address": "Endereço",
   "salaryBase": "Salário em centavos",
@@ -121,6 +122,8 @@ Chamadas:
 {
   "id": "Id do analista",
   "user_id": "Id do usuário",
+  "email": "Email de autenticação do analista",
+  "password": "Senha do analista",
   "roles": "Cada role representa um grupo de acesso"
 }
 ```
@@ -137,6 +140,7 @@ Chamadas:
   "metadatas": {
     "name": "Nome impresso no cartão usuário",
     "digits": "Dígitos do cartão"
+    "limit": "Limite do cartao de crédito em reais"
   }
 }
 ```
