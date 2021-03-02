@@ -26,7 +26,7 @@ O Analista deve ser capaz de:
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
-- Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser salvo. O sua aplicacao deverá fornecer uma área para auditoria. Usar o modelo existente no desafio.
+- Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rasteável. A sua aplicação deverá fornecer uma área para auditoria e usar o modelo existente no desafio.
 
 Condições empregadas
 
@@ -187,8 +187,9 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 
 - Publique seu código no seu perfil no GitHub
 - Publique sua aplicação [heroku](https://www.heroku.com/)
+  - Crie uma conta no Heroku 
   - Habilite o [Heroku Github Action](https://github.com/marketplace/actions/deploy-to-heroku)
-  - basta Editar o template em "workflows/node.js.yml"
+  - basta Editar o template em "workflows/node.js.yml" que o deploy será realizado automaticamente
 
 ### **Outras informações**
 
