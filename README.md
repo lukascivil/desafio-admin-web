@@ -20,7 +20,7 @@ O Analista deve ser capaz de:
 
 1. **Visualizar** usuários da base
 2. **Visualizar** cartoes disponíveis
-3. **Visualizar** Auditoria
+3. **Visualizar** Auditoria. Esta deve conter o histórico de ações do operador. Obs: Nao se preocupe com o campo "requestedBy", pode ser passado vazio.
 4. **Aprovar**, **rejeitar**, **excluir** um pedido de cartão
 5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
@@ -32,7 +32,8 @@ O Analista deve ser capaz de **(Level Up)**
 3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
 4. Analista com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
 5. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
-6. **Sair** da aplicação
+6. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy.
+7. **Sair** da aplicação
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
@@ -157,6 +158,19 @@ Chamadas:
     }
   ],
   "status": 200
+}
+```
+
+- **Audits**
+
+```json
+{
+  id: "Id único deste evento",
+  createdAt: "Data que esta ação foi executada",
+  type: "Nome da ação executada pelo usuário, esse campo pode ser definido por voce, ex: cartao_removido",
+  before: "Valor antigo, antes da alteracao",
+  after: "Valor novo, o que foi alterado, também pode conter todos os campos do cartao que foi alterado por exemplo",
+  requestedBy: "Id do analyst que executou a acao",
 }
 ```
 
