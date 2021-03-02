@@ -165,12 +165,12 @@ Chamadas:
 
 ```json
 {
-  id: "Id único deste evento",
-  createdAt: "Data que esta ação foi executada",
-  type: "Nome da ação executada pelo usuário, esse campo pode ser definido por voce, ex: cartao_removido",
-  before: "Valor antigo, antes da alteracao",
-  after: "Valor novo, o que foi alterado, também pode conter todos os campos do cartao que foi alterado por exemplo",
-  requestedBy: "Id do analyst que executou a acao",
+  "id": "Id único deste evento",
+  "createdAt": "Data que esta ação foi executada",
+  "type": "Nome da ação executada pelo usuário, esse campo pode ser definido por voce, ex: cartao_removido",
+  "before": "Valor antigo, antes da alteracao",
+  "after": "Valor novo, o que foi alterado, também pode conter todos os campos do cartao que foi alterado por exemplo",
+  "requestedBy": "Id do analyst que executou a acao",
 }
 ```
 
