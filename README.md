@@ -26,7 +26,7 @@ O Analista deve ser capaz de:
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
 
 O Analista deve ser capaz de **(Level Up)**
-> Recursos do contexto **users**, **cards**, **audits**
+> Recursos do contexto **features**, **analysts**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
 3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
