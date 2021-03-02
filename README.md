@@ -37,6 +37,7 @@ O Analista deve ser capaz de **(Level Up)**
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
 - Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rasteável. A sua aplicação deverá fornecer uma área para auditoria e usar o modelo existente no desafio.
+- Analista com roles (n1 e n2) ou (n2) é resumida em n2.
 
 Condições empregadas
 
