@@ -171,15 +171,16 @@ Chamadas:
 ```
 
 - **Audits**
+> Histórico das Ações realizadas pelos operadores. 
 
 ```json
 {
   "id": "Id único deste evento",
   "createdAt": "Data que esta ação foi executada",
-  "type": "Nome da ação executada pelo usuário, esse campo pode ser definido por voce, ex: cartao_removido",
-  "before": "Valor antigo, antes da alteracao",
+  "type": "Nome da ação executada pelo usuário, esse campo pode ser definido por voce, ex: cartao_removido, status_alterado",
+  "before": "Valor antigo, antes da alteração",
   "after": "Valor novo, o que foi alterado, também pode conter todos os campos do cartao que foi alterado por exemplo",
-  "requestedBy": "Id do analyst que executou a acao",
+  "requestedBy": "Id do analyst que executou a ação",
 }
 ```
 
