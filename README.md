@@ -57,7 +57,7 @@ npm run start
 output:
 
 ```
-// CRA
+// CRA - Acessar pelo navegador
   http://localhost:3000/
 
 // Api
