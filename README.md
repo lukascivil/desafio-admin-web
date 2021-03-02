@@ -30,7 +30,8 @@ O Analista deve ser capaz de **(Level Up)**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
 3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
-4. **Sair** da aplicação
+4. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
+5. **Sair** da aplicação
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
@@ -66,26 +67,26 @@ output:
   http://localhost:3001/features
 ```
 
-Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Sua aplicacao deve contemplar os resources listados acima e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
 Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
 
 Chamadas:
 
 - Users
 
-  - GET http://localhost:3000/users
-  - GET http://localhost:3000/users/:id
+  - GET http://localhost:3001/users
+  - GET http://localhost:3001/users/:id
 
 - Analysts
 
-  - GET http://localhost:3000/analysts
+  - GET http://localhost:3001/analysts
 
 - Cards
 
-  - GET http://localhost:3000/cards
-  - POST http://localhost:3000/cards
-  - PUT http://localhost:3000/cards/:id
-  - DELETE http://localhost:3000/cards/:id
+  - GET http://localhost:3001/cards
+  - POST http://localhost:3001/cards
+  - PUT http://localhost:3001/cards/:id
+  - DELETE http://localhost:3001/cards/:id
 
 - Features
 
@@ -169,7 +170,8 @@ Realize um Fork deste projeto para começar o seu desafio. O projeto do desafio 
 
 Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dicas:
 
-- O layout precisa "escalar", ou seja, qual a visão de futuro para o mesmo caso precise adicionar mais informações?
+- O layout precisa "escalar", ou seja, qual a visão de futuro para o App caso precise adicionar mais informações?
+- Não se prenda a algum layout específico que tenha encontrado pela internet, deixe sua criatividade tomar conta.
 
 ### **Entrega**
 
