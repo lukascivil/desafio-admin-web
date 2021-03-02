@@ -15,6 +15,7 @@ Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os 
 
 Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
 
+## Desafio
 
 O Analista deve ser capaz de:
 > Recursos do contexto **users**, **cards**, **audits**
