@@ -15,6 +15,7 @@ Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os 
 
 Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
 
+
 O Analista deve ser capaz de:
 > Recursos do contexto **users**, **cards**, **audits**
 
@@ -25,7 +26,7 @@ O Analista deve ser capaz de:
 5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
 
-O Analista deve ser capaz de **(Level Up)**
+O Analista deve ser capaz de **(Level Up) Recursos adicionais desejaveis mas nao requeridos**
 > Recursos do contexto **features**, **analysts**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
