@@ -38,7 +38,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 6. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy.
 7. **Sair** da aplicação
 
-Observacoes
+Observações
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
 - Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rasteável. A sua aplicação deverá fornecer uma área para auditoria e usar o modelo existente no desafio.
 - Analista com roles (n1 e n2) ou (n2) é resumida em n2.
