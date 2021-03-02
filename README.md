@@ -206,7 +206,7 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - Publique sua aplicação [heroku](https://www.heroku.com/)
   - Crie uma conta no Heroku 
   - Habilite o [Heroku Github Action](https://github.com/marketplace/actions/deploy-to-heroku)
-  - basta Editar o template em "workflows/node.js.yml" que o deploy será realizado automaticamente
+  - Edite o template em "workflows/node.js.yml" para realizar o deploy de forma automática
 
 ### **Outras informações**
 
