@@ -7,15 +7,16 @@ Que tal ser desafiado pela Stone?
 
 O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento. Voce terá o papel de ajudar a alavancar os negócios dessa empresa. Um nome bem legal para ela ficará a seu critéio, mas ao longo do texto a chamaremos de **Rocha Incrível**.
 
-A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise do usuário para a liberação do cartão de crédito, mas o sistema ainda não existe. Os Análistas que serao nossos futuro clientes usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das acoes dos proprios analistas.
+A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise dos usuários para a liberação do cartão de crédito, mas o sistema que automatizará todo o processo ainda não existe. Os nossos futuros clientes, os análistas, usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das ações dos próprios analistas.
 
-Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar** ou **rejeitar** ou **excluir** os pedidos de cartão.
+Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar**, **rejeitar** ou **excluir** os pedidos de cartão.
 
 Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
 
 Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
 
 O Analista deve ser capaz de:
+> Recursos do contexto **users**, **cards**, **audits**
 
 1. **Visualizar** usuários da base
 2. **Visualizar** cartoes disponíveis
@@ -23,6 +24,15 @@ O Analista deve ser capaz de:
 4. **Aprovar**, **rejeitar**, **excluir** um pedido de cartão
 5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
 6. **Solicitar** um novo cartao para qualquer usuário presente na base
+
+O Analista deve ser capaz de **(Level Up)**
+> Recursos do contexto **features**, **analysts**
+1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
+2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
+3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
+4. Analista com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
+5. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
+6. **Sair** da aplicação
 
 Observacoes
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
@@ -58,26 +68,26 @@ output:
   http://localhost:3001/features
 ```
 
-Sua aplicacao deve contemplar todos os resources listados acima e realizar as seguintes chamadas para atender as nesessidades do analista.
+Sua aplicacao deve contemplar os resources listados acima e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
 Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
 
 Chamadas:
 
 - Users
 
-  - GET http://localhost:3000/users
-  - GET http://localhost:3000/users/:id
+  - GET http://localhost:3001/users
+  - GET http://localhost:3001/users/:id
 
 - Analysts
 
-  - GET http://localhost:3000/analysts
+  - GET http://localhost:3001/analysts
 
 - Cards
 
-  - GET http://localhost:3000/cards
-  - POST http://localhost:3000/cards
-  - PUT http://localhost:3000/cards/:id
-  - DELETE http://localhost:3000/cards/:id
+  - GET http://localhost:3001/cards
+  - POST http://localhost:3001/cards
+  - PUT http://localhost:3001/cards/:id
+  - DELETE http://localhost:3001/cards/:id
 
 - Features
 
@@ -97,8 +107,8 @@ Chamadas:
   "enabledFeatures": "Lista de recursos habilitados",
   "document": "Documento do usuário",
   "metadatas": {
-    "validDocument": "O documento é válido?",
-    "verified": "O usuário foi validado pela API?"
+    "validDocument": "O documento é válido? A IA é quem define este campo.",
+    "verified": "O usuário foi verificado pela IA da empresa?"
   },
   "address": "Endereço",
   "salaryBase": "Salário em centavos",
@@ -112,6 +122,8 @@ Chamadas:
 {
   "id": "Id do analista",
   "user_id": "Id do usuário",
+  "email": "Email de autenticação do analista",
+  "password": "Senha do analista",
   "roles": "Cada role representa um grupo de acesso"
 }
 ```
@@ -127,7 +139,8 @@ Chamadas:
   "user_id": "Id do usuário",
   "metadatas": {
     "name": "Nome impresso no cartão usuário",
-    "digits": "Dígitos do cartão"
+    "digits": "Dígitos do cartão",
+    "limit": "Limite do cartao de crédito em reais"
   }
 }
 ```
@@ -161,7 +174,8 @@ Realize um Fork deste projeto para começar o seu desafio. O projeto do desafio 
 
 Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dicas:
 
-- O layout precisa "escalar", ou seja, qual a visão de futuro para o mesmo caso precise adicionar mais informações?
+- O layout precisa "escalar", ou seja, qual a visão de futuro para o App caso precise adicionar mais informações?
+- Não se prenda a algum layout específico que tenha encontrado pela internet, deixe sua criatividade tomar conta.
 
 ### **Entrega**
 
@@ -192,7 +206,7 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - Publique sua aplicação [heroku](https://www.heroku.com/)
   - Crie uma conta no Heroku 
   - Habilite o [Heroku Github Action](https://github.com/marketplace/actions/deploy-to-heroku)
-  - basta Editar o template em "workflows/node.js.yml" que o deploy será realizado automaticamente
+  - Edite o template em "workflows/node.js.yml" para realizar o deploy de forma automática
 
 ### **Outras informações**
 
@@ -206,6 +220,9 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 - [Airbnb Javascript](https://github.com/airbnb/javascript)
 - [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [React-Admin](https://marmelab.com/react-admin/)
+- [REST](https://pt.wikipedia.org/wiki/REST)
+- [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
+
 
 
 Tenha um bom desafio.
