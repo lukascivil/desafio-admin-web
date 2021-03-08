@@ -21,31 +21,28 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 - O Analista deve ser capaz de:
 > Recursos do contexto **users**, **cards**, **audits**
 
-1. **Visualizar** usuários da base
-2. **Visualizar** cartoes disponíveis
-3. **Visualizar** Auditoria. Esta deve conter o histórico de ações do operador. Obs: Nao se preocupe com o campo "requestedBy", pode ser passado vazio.
-4. **Aprovar**, **rejeitar**, **excluir** um pedido de cartão
-5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão
-6. **Solicitar** um novo cartao para qualquer usuário presente na base
+1. **Visualizar** usuários da base.
+2. **Visualizar** cartoes disponíveis.
+3. **Visualizar** Auditoria. Esta deve conter o histórico de ações do operador (Item 4).
+4. **Aprovar**, **rejeitar** um pedido de cartão. Essas acoes alteram somente o status do pedido e devem gerar logs em auditoria. O status inicial de um pedido é "requested", mas pode ser alterado para "approved" ou "rejected".
 
 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
 > Recursos do contexto **features**, **analysts**
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
-2. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
-3. Analista com role **n1 nao deve ser capaz de visualizar** auditoria.
-4. Analista com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
-5. Analista com role **n1 nao deve ser capaz de visualizar** limite do cartao de crédito dos usuários.
-6. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy.
-7. **Sair** da aplicação
+2.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested".
+3. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
+4. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
+5. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** auditoria.
+6. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
+7. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
+8. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
+9. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
+10. **Sair** da aplicação
 
 Observações
-- Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, exibir nome, documento, email, ... por exemplo.
-- Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rasteável. A sua aplicação deverá fornecer uma área para auditoria e usar o modelo existente no desafio.
-- Analista com roles (n1 e n2) ou (n2) é resumida em n2.
-
-Condições empregadas
-
-- Analistas com role n1 não podem rejeitar ou excluir um pedido de cartão e nem visualizar o salário base do Cliente
+- Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, é essencial exibir nome, documento e email, por exemplo.
+- Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rastreável. A sua aplicação deverá fornecer uma área para auditoria e usar a rota "/audits" existente no desafio.
+- Analista com roles (n1 e n2) ou (n2) é resumida em n2. Podemos inferir que roles de n2 implicam em mais responsabilidades.
 
 ## Projeto
 
@@ -75,7 +72,7 @@ output:
   http://localhost:3001/features
 ```
 
-Sua aplicacao deve contemplar os resources listados acima e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
+Sua aplicacao deve contemplar os resources listados acima - de acordo com o desafio - e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
 Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
 
 Chamadas:
@@ -176,7 +173,7 @@ Chamadas:
 ```
 
 - **Audits**
-> Histórico das Ações realizadas pelos operadores. 
+> Histórico das Ações realizadas pelos operadores
 
 ```json
 {
@@ -192,10 +189,7 @@ Chamadas:
 Observações
 
 - Cada cartão tem seu próprio estado e sempre parte do estado "requested" (solicitado).
-
-
 - Uma feature habilitada - que é retornada dentro de usuário - diz ao operador quais recursos aquele usuário tem disponível.
-- A API também disponibiliza uma endpoint para um &quot;de para&quot; entre as features habilitadas para um usuário.
 
 ### **Desenvolvimento**
 Realize um Fork deste projeto para começar o seu desafio. O projeto do desafio conta com react-scripts e Typescript para lhe ajudar durante o desenvolvimento.
