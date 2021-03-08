@@ -9,16 +9,16 @@ O seu desafio será construir uma aplicação de gestão financeira para o mundo
 
 A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise dos usuários para a liberação do cartão de crédito, mas o sistema que automatizará todo o processo ainda não existe. Os nossos futuros clientes, os análistas, usam uma planilha para controle interno. Essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das ações dos próprios analistas.
 
-Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. O operador (Analista) deverá ser capaz de **aprovar**, **rejeitar** ou **excluir** os pedidos de cartão.
+Precisamos que a nossa aplicação de gestão seja capaz de fornecer aos nossos analistas as informações necessárias sobre os usuários da base e as solicitações de cartão. A plataforma deverá fornecer ao operador (Analista) meios de **aprovar**, **rejeitar** ou **excluir** os pedidos de cartão e de acompanhar o histórico das acoes que foram executadas.
 
-Os operadores trabalham em 2 times diferentes, para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
+Os operadores trabalham em 2 times diferentes, time n1 e n2. Para isso a API disponibiliza os roles de acesso para cada analista cadastrado, dessa forma será possível exibir somente informações relevantes para cada time e manter a segurança da informação.
 
-Lembre-se que o time de back-end já criou a API que fornecerá as informações necessárias, entretanto, a estrutura entregue pela api pode ser alterada por você na aplicação Front de acordo com as necessidades.
+Lembre-se que o time de back-end já criou uma API que fornecerá as informações necessárias para todo o desenvolvimento.
 
 ## Desafio
 Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um sistema robusto de administração de Cartao de crédito.
 
-- O Analista deve ser capaz de:
+- Parte 1 - O Analista deve ser capaz de:
 > Recursos do contexto **users**, **cards**, **audits**
 
 1. **Visualizar** usuários da base.
@@ -26,8 +26,9 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 3. **Visualizar** Auditoria. Esta deve conter o histórico de ações do operador (Item 4).
 4. **Aprovar**, **rejeitar** um pedido de cartão. Essas acoes alteram somente o status do pedido e devem gerar logs em auditoria. O status inicial de um pedido é "requested", mas pode ser alterado para "approved" ou "rejected".
 
-- O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
+- Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
 > Recursos do contexto **features**, **analysts**
+
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
 2.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested".
 3. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
@@ -43,6 +44,7 @@ Observações
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, é essencial exibir nome, documento e email, por exemplo.
 - Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rastreável. A sua aplicação deverá fornecer uma área para auditoria e usar a rota "/audits" existente no desafio.
 - Analista com roles (n1 e n2) ou (n2) é resumida em n2. Podemos inferir que roles de n2 implicam em mais responsabilidades.
+- Este projeto conta com uma aplicacao cliente servidor. O servidor disponibilizará as rotas necessárias para todo o desenvolvimento, tanto da parte 1 quanto da parte 2. A aplicacao front presente conta com um App start do react que voce deverá substituir pelo sistema elaborado no desafio.
 
 ## Projeto
 
@@ -70,6 +72,7 @@ output:
   http://localhost:3001/analysts
   http://localhost:3001/cards
   http://localhost:3001/features
+  http://localhost:3001/audits
 ```
 
 Sua aplicacao deve contemplar os resources listados acima - de acordo com o desafio - e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
