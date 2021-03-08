@@ -5,7 +5,7 @@
 
 Que tal ser desafiado pela Stone?
 
-O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento. Voce terá o papel de ajudar a alavancar os negócios dessa empresa. Um nome bem legal para ela ficará a seu critéio, mas ao longo do texto a chamaremos de **Rocha Incrível**.
+O seu desafio será construir uma aplicação de gestão financeira para o mundo dos negócios de uma nova empresa que está em constante crescimento. Voce terá o papel de ajudar a alavancar os negócios dessa empresa. Um nome bem legal para ela ficará a seu critério, mas ao longo do texto a chamaremos de **Rocha Incrível**.
 
 A Rocha terá você como desenvolvedor responsável pelas novas funcionalidades que a mesma deverá soltar no mercado ainda este ano. A empresa tem usuários em sua base de dados e agora vai começar a oferecer cartão de crédito para eles. A Rocha conta com times que fazem a análise dos usuários para a liberação do cartão de crédito, mas o sistema que automatizará todo o processo ainda não existe. Os nossos futuros clientes, os análistas, usam uma planilha para controle interno, essa planilha controla os cartoes "Solicitados", "Aprovados", "Rejeitados" e,  também é utilizada para auditoria das ações dos próprios analistas.
 
