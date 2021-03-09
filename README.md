@@ -239,7 +239,7 @@ Fique à vontade para definir seu próprio layout. Mas vamos deixar algumas dica
 ### **Outras informações**
 
 - Utilize React + Typescript
-- Ferramentas como BootStrap, Material Ui, MaterializeCSS podem ser utilizadas
+- Ferramentas como BootStrap, Material Ui, MaterializeCSS e React-Admin podem ser utilizadas
 - Testes são legais, mas não são obrigatórios
 
 ### **Material de Estudo**
