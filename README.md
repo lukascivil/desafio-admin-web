@@ -35,18 +35,18 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio e fazer a validação direto no cliente.
  - GET http://localhost:3001/analysts
-3.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested. Um cartao só pode ser criado para usuários que tenham enabledFeatures = "card". A rota "/features" pode ser utilizada como auxilio para entender cada enabledFeatures do usuário.
+2.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested. Um cartao só pode ser criado para usuários que tenham enabledFeatures = "card". A rota "/features" pode ser utilizada como auxilio para entender cada enabledFeatures do usuário.
  - POST http://localhost:3001/cards
  - DELETE http://localhost:3001/cards/:id
  - GET http://localhost:3000/features
-5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
+3. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
  - PUT http://localhost:3001/cards/:id
-8. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** auditoria.
-9. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
-10. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
-11. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
-12. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
-13. **Sair** da aplicação
+4. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** auditoria.
+5. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
+6. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
+7. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
+8. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
+9. **Sair** da aplicação
   - Redirecionar o usuário para tela de login
 
 Observações
