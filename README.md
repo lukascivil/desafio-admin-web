@@ -32,7 +32,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 
 
 
-### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
+### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos)**
 > Recursos do contexto **features**, **analysts**
 
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio e fazer a validação direto no cliente.
