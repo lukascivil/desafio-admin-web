@@ -29,8 +29,9 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
   - GET http://localhost:3001/audits
 4. **Aprovar**, **rejeitar** um pedido de cartão. Essas acoes alteram somente o status do pedido e devem gerar logs em auditoria. O status inicial de um pedido é "requested", mas pode ser alterado para "approved" ou "rejected".
   - PUT http://localhost:3001/cards/:id
-
-
+ 
+<br />
+<br />
 
 ### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos)**
 > Recursos do contexto **features**, **analysts**
