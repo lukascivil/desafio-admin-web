@@ -22,23 +22,32 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 > Recursos do contexto **users**, **cards**, **audits**
 
 1. **Visualizar** usuários da base.
+  - GET http://localhost:3001/users
 2. **Visualizar** cartoes disponíveis.
+  - GET http://localhost:3001/cards
 3. **Visualizar** Auditoria. Esta deve conter o histórico de ações do operador (Item 4).
+  - GET http://localhost:3001/audits
 4. **Aprovar**, **rejeitar** um pedido de cartão. Essas acoes alteram somente o status do pedido e devem gerar logs em auditoria. O status inicial de um pedido é "requested", mas pode ser alterado para "approved" ou "rejected".
+  - PUT http://localhost:3001/cards/:id
 
 - Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
 > Recursos do contexto **features**, **analysts**
 
-1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio.
-2.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested".
-3. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
-4. **Solicitar** um novo cartao para usuários que tenham enabledFeatures = "card". Utilizar a rota "/features" como auxílio.
-5. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** auditoria.
-6. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
-7. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
-8. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
-9. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
-10. **Sair** da aplicação
+1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio e fazer a validação direto no cliente.
+ - GET http://localhost:3001/analysts
+3.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested. Um cartao só pode ser criado para usuários que tenham enabledFeatures = "card". A rota "/features" pode ser utilizada como auxilio para entender cada enabledFeatures do usuário.
+ - POST http://localhost:3001/cards
+ - DELETE http://localhost:3001/cards/:id
+ - GET http://localhost:3000/features
+5. **Atualizar** o "nome impresso" do usuário de um pedido de cartão.
+ - PUT http://localhost:3001/cards/:id
+8. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** auditoria.
+9. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** salário base do usuário.
+10. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
+11. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
+12. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
+13. **Sair** da aplicação
+  - Redirecionar o usuário para tela de login
 
 Observações
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, é essencial exibir nome, documento e email, por exemplo.
@@ -74,36 +83,6 @@ output:
   http://localhost:3001/features
   http://localhost:3001/audits
 ```
-
-Sua aplicacao deve contemplar os resources listados acima - de acordo com o desafio - e realizar as chamadas definidas logo a baixo para atender as nesessidades do analista.
-Entretanto, caso seja necessário realizar qualquer outra chamada, fique a vontade para implementá-la.
-
-Chamadas:
-
-- Users
-
-  - GET http://localhost:3001/users
-  - GET http://localhost:3001/users/:id
-
-- Analysts
-
-  - GET http://localhost:3001/analysts
-
-- Cards
-
-  - GET http://localhost:3001/cards
-  - POST http://localhost:3001/cards
-  - PUT http://localhost:3001/cards/:id
-  - DELETE http://localhost:3001/cards/:id
-
-- Features
-
-  - GET http://localhost:3000/features
-
-- Audits
-  -  GET http://localhost:3001/audits
-  -  POST http://localhost:3001/audits
-
 
 ### **Estrutura de dados**
 
