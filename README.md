@@ -35,7 +35,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 ### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos)**
 > Recursos do contexto **features**, **analysts**
 
-1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio e fazer a validação direto no cliente.
+1. **Entrar** na aplicacao com email e senha. Utilizar a rota "/analysts" como auxílio e fazer a validação direto no client, ou seja a sessao do usuário deverá ser implementada no front e pode seguir um caminho simples sem problemas. A tela de login deverá conter os campos email e senha.
  - GET http://localhost:3001/analysts
 2.  **excluir**, **criar** um pedido de cartão. A acao de excluir, remove um elemento por inteiro e a de criar, gera um novo pedido de cartao com status "requested. Um cartao só pode ser criado para usuários que tenham enabledFeatures = "card". A rota "/features" pode ser utilizada como auxilio para entender cada enabledFeatures do usuário.
  - POST http://localhost:3001/cards
@@ -49,7 +49,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 7. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
 8. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
 9. **Sair** da aplicação
-  - Redirecionar o usuário para tela de login
+  - Redirecionar o usuário para tela de login. Voce deverá remover a sessao do usuário no front e direcioná-lo para a tela de login.
 
 <br />
 
