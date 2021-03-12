@@ -18,7 +18,7 @@ Lembre-se que o time de back-end já criou uma API que fornecerá as informaçõ
 ## Desafio
 Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um sistema robusto de administração de Cartao de crédito.
 
-- Parte 1 - O Analista deve ser capaz de:
+### Parte 1 - O Analista deve ser capaz de:
 > Recursos do contexto **users**, **cards**, **audits**
 
 1. **Visualizar** usuários da base.
@@ -30,7 +30,9 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 4. **Aprovar**, **rejeitar** um pedido de cartão. Essas acoes alteram somente o status do pedido e devem gerar logs em auditoria. O status inicial de um pedido é "requested", mas pode ser alterado para "approved" ou "rejected".
   - PUT http://localhost:3001/cards/:id
 
-- Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
+
+
+### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos - Level Up)**
 > Recursos do contexto **features**, **analysts**
 
 1. **Entrar** na aplicacao com email e senha. Utilizar rota "/analysts" como auxílio e fazer a validação direto no cliente.
