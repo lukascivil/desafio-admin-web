@@ -48,8 +48,7 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 6. Analista que tem somente com role **n1 nao deve ser capaz de visualizar** limite do cartão de crédito dos usuários.
 7. Analista que tem somente com role **n1 nao deve ser capaz de excluir** um pedido de cartão.
 8. O operador deve ser capaz de visualizar em auditoria o nome do usuário que executou a ação. Utilizar o campo requestedBy, que representa o identificador do usuário que executou tal acao.
-9. **Sair** da aplicação
-  - Redirecionar o usuário para tela de login. Voce deverá remover a sessao do usuário no front e direcioná-lo para a tela de login.
+9. **Sair** da aplicação. Redirecionar o usuário para tela de login. Voce deverá remover a sessao do usuário no front e direcioná-lo para a tela de login.
 
 <br />
 
