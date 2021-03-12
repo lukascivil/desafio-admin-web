@@ -31,7 +31,6 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
   - PUT http://localhost:3001/cards/:id
  
 <br />
-<br />
 
 ### Parte 2 - O Analista deve ser capaz de: **(Recursos adicionais desejaveis mas nao requeridos)**
 > Recursos do contexto **features**, **analysts**
