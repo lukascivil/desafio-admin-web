@@ -51,6 +51,8 @@ Alguns pontos foram enumerados para que consigamos fornecer ao nosso operador um
 9. **Sair** da aplicação
   - Redirecionar o usuário para tela de login
 
+<br />
+
 Observações
 - Tente exibir informacoes que acredite que sejam relevantes para o analista, no caso de usuário, é essencial exibir nome, documento e email, por exemplo.
 - Toda operacao gera um novo item na lista de auditoria, ou seja tudo deve ser rastreável. A sua aplicação deverá fornecer uma área para auditoria e usar a rota "/audits" existente no desafio.
